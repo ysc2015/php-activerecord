@@ -1597,8 +1597,9 @@ class Model
 			$num_args--;
 		}
 		//find by pk
-		elseif (1 === count($args) && 1 == $num_args)
-			$args = $args[0];
+		// fix the countable bug
+		/*elseif (1 === count($args) && 1 == $num_args)
+			$args = $args[0];*/
 
 		// anything left in $args is a find by pk
 		if ($num_args > 0 && !isset($options['conditions']))
